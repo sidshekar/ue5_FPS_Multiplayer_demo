@@ -85,6 +85,9 @@ public:
 
 	virtual void OnJumped_Implementation() override;
 
+	UPROPERTY(Replicated, EditAnywhere, BlueprintReadWrite)
+	float currentHealth;
+
 protected:
 	
 	/** Fires a projectile. */
@@ -92,6 +95,9 @@ protected:
 
 	UFUNCTION(Server, Reliable, WithValidation)
 	void Server_Fire();
+
+
+
 
 	void MoveInput(const FInputActionValue& InputValue);
 

@@ -12,6 +12,8 @@
 #include "Kismet/GameplayStatics.h"
 #include "Animation/AnimSequence.h"
 
+#include "Net/UnrealNetwork.h"
+
 
 AFPSCharacter::AFPSCharacter()
 {
@@ -32,6 +34,8 @@ AFPSCharacter::AFPSCharacter()
 	GunMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("FP_Gun"));
 	GunMeshComponent->CastShadow = false;
 	GunMeshComponent->SetupAttachment(Mesh1PComponent, "GripPoint");
+
+	currentHealth = 100;
 }
 
 
@@ -129,6 +133,16 @@ bool AFPSCharacter::Server_Fire_Validate() {
 	return true;
 }
 
+void AFPSCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
+
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	//Replicated Properties
+
+	// Net/UnrealNetwork.h include required for DOREPLIFETIME
+	DOREPLIFETIME(AFPSCharacter, currentHealth);
+
+}
 
 
 void AFPSCharacter::MoveInput(const FInputActionValue& InputValue)
