@@ -5,6 +5,7 @@
 
 - Objective replication taken from "unreal_mds_fps_mp_simoulated_proxy_tut" project on github 
 - Maybe better reference project would be " aie_unreal_networking_basics " since it has commit progress. 
+- Endzone code is present in Udemy tut "unreal_multiplayer_udemy_tutorial/_OtherReferences/ThirdPersonMP_unreal_tut"
 
 
 # Why create a "simplified" FPS C++ Template?
