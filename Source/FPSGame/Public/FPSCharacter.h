@@ -88,6 +88,8 @@ public:
 	UPROPERTY(Replicated, EditAnywhere, BlueprintReadWrite)
 	float currentHealth;
 
+	bool bIsCarryingObjective = false;
+
 protected:
 	
 	/** Fires a projectile. */
