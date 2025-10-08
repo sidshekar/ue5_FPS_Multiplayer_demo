@@ -1,0 +1,23 @@
+// Fill out your copyright notice in the Description page of Project Settings.
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "GameFramework/PlayerController.h"
+#include "FPSPlayerController.generated.h"
+
+// Needs to be created 
+
+UCLASS()
+class FPSGAME_API AFPSPlayerController : public APlayerController
+{
+	GENERATED_BODY()
+
+public:
+	
+	// BP Implementable Event
+	UFUNCTION(BlueprintImplementableEvent, Category = "PlayerController")
+	void OnMissionCompleted(APawn* InstigatorPawn);
+
+	
+};

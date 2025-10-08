@@ -88,6 +88,7 @@ public:
 	UPROPERTY(Replicated, EditAnywhere, BlueprintReadWrite)
 	float currentHealth;
 
+	UPROPERTY(Replicated, BlueprintReadOnly, Category = "Gameplay")
 	bool bIsCarryingObjective = false;
 
 protected:
